@@ -28,19 +28,22 @@ You can read our Documention on https://api.ksprojects.me/docs
 ## <b>Short Url</b>
 
 ```python
-from BitlyAPI import shorten_url
+from BitlyAPI import shorten_urls
 
-url = "https://github.com/Krishna-Singhal"
+urls = ["https://github.com/Krishna-Singhal", "...", "..."]
 
-shortened_url = shorten_url(url)
-print(shortened_url)
+response = shorten_url(urls)
+
+# print all shotened urls
+for i in response:
+    print(i.long_url, i.short_url, i.status_txt)
 ```
 
 #### <b>Parameters</b>
 
 Parameter | description
 --------- | -----------
-`url` | Long url
+`urls` | List of Long urls
 
 <br>
 
